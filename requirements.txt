@@ -4,3 +4,9 @@ seaborn
 matplotlib
 pandas
 scikit-learn
+plotly
+itertools
+os
+pickle
+time
+PIL
