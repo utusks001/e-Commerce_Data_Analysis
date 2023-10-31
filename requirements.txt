@@ -10,3 +10,8 @@ os
 pickle
 time
 PIL
+folium
+json
+requests
+wordcloud
+collections
