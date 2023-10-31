@@ -5,6 +5,3 @@ matplotlib
 pandas
 scikit-learn
 plotly
-itertools
-
-
