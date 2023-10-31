@@ -30,7 +30,7 @@ import time
 from PIL import Image
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-from io import StringIO
+
 
 import warnings
 warnings.filterwarnings("ignore")
