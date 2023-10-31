@@ -54,30 +54,67 @@ st.write("""
 
 add_selectitem = st.sidebar.selectbox("e-Commerce Data Analysis Steps ", ("1. Data Wrangling - Gathering Data", "2. Data Wrangling - Assesing Data", "3. Data Wrangling - Cleaning Data", "4. Exploratory Data Analysis (EDA)",  "5. Recency Frequency Monetary (RFM)", "6. Visualization & Explanatory Analysis", "7. Conclusion"))     
 
-# gauth = GoogleAuth()
-# gauth.LocalWebserverAuth()
+gauth = GoogleAuth()
+gauth.LocalWebserverAuth()
 
-# drive = GoogleDrive(gauth)
+drive = GoogleDrive(gauth)
 
-# file_id = 'https://drive.google.com/drive/folders/1bTwK5cUZ03glkslfAyIqUpogscyCocUZ?usp=sharing'  
-# file = drive.CreateFile({'id': file_id})
+file_id = 'https://drive.google.com/drive/u/1/folders/1bTwK5cUZ03glkslfAyIqUpogscyCocUZ'  
+file = drive.CreateFile({'id': file_id})
 
-# with
+with
  
-# open('data.csv', 'wb') as f:
-#     file.GetContentFile(f)
+open('customer_dataset.csv', 'wb') as a:
+    file.GetContentFile(a)
 
-# df = pd.read_csv('data.csv')
+data_customer = pd.read_csv('customer_dataset.csv')
+ 
+open('products_dataset.csv', 'wb') as b:
+    file.GetContentFile(b)
+
+data_products = pd.read_csv('products_dataset.csv')
+ 
+open('sellers_dataset.csv', 'wb') as c:
+    file.GetContentFile(c)
+
+data_customer = pd.read_csv('sellers_dataset.csv')
+ 
+open('orders_dataset.csv', 'wb') as d:
+    file.GetContentFile(d)
+
+data_products = pd.read_csv('orders_dataset.csv')
+
+ 
+open('order_items_dataset.csv', 'wb') as e:
+    file.GetContentFile(e)
+
+data_customer = pd.read_csv('order_items_dataset.csv')
+ 
+open('order_payments_dataset.csv', 'wb') as f:
+    file.GetContentFile(f)
+
+data_products = pd.read_csv('order_payments_dataset.csv')
+ 
+open('order_reviews_dataset.csv', 'wb') as g:
+    file.GetContentFile(g)
+
+data_customer = pd.read_csv('order_reviews_dataset.csv')
+ 
+open('product_category_name_translation.csv', 'wb') as h:
+    file.GetContentFile(h)
+
+data_products = pd.read_csv('product_category_name_translation.csv')
+
 
 # Load data
-data_customer = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/customers_dataset.csv')
-data_products = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/products_dataset.csv')
-data_sellers = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/sellers_dataset.csv')
-data_orders = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/orders_dataset.csv')
-data_order_items = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/order_items_dataset.csv')
-data_order_payments = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/order_payments_dataset.csv')
-data_order_reviews = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/order_reviews_dataset.csv')
-data_products_translation = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/product_category_name_translation.csv') 
+# data_customer = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/customers_dataset.csv')
+# data_products = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/products_dataset.csv')
+# data_sellers = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/sellers_dataset.csv')
+# data_orders = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/orders_dataset.csv')
+# data_order_items = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/order_items_dataset.csv')
+# data_order_payments = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/order_payments_dataset.csv')
+# data_order_reviews = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/order_reviews_dataset.csv')
+# data_products_translation = pd.read_csv('https://raw.githubusercontent.com/utusks001/e-Commerce_Data_Analysis/main/product_category_name_translation.csv') 
 
 
 def gathering():
