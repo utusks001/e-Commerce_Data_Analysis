@@ -11,7 +11,7 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.preprocessing import MinMaxScaler
 from itertools import combinations
-import plotly.offline
+import plotly.offline 
 import plotly.graph_objs as go
 
 plotly.offline.plot({"data": [go.Scatter(x=[1, 2, 3, 4], y=[4, 3, 2, 1])],
@@ -24,8 +24,6 @@ import json
 import requests
 import folium
 from folium.plugins import FastMarkerCluster, Fullscreen, MiniMap, HeatMap, HeatMapWithTime, LocateControl
-from wordcloud import WordCloud
-from collections import Counter
 import streamlit as st
 import pickle
 import time
