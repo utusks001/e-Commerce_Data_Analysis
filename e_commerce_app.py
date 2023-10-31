@@ -11,7 +11,7 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.preprocessing import MinMaxScaler
 from itertools import combinations
-import plotly.offline as py
+import plotly.offline
 import plotly.graph_objs as go
 
 plotly.offline.plot({"data": [go.Scatter(x=[1, 2, 3, 4], y=[4, 3, 2, 1])],
