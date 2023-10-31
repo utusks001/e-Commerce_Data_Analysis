@@ -6,12 +6,5 @@ pandas
 scikit-learn
 plotly
 itertools
-os
-pickle
-time
-PIL
-folium
-json
-requests
-wordcloud
-collections
+
+
