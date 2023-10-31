@@ -53,14 +53,14 @@ st.write("""
 add_selectitem = st.sidebar.selectbox("e-Commerce Data Analysis Steps ", ("1. Data Wrangling - Gathering Data", "2. Data Wrangling - Assesing Data", "3. Data Wrangling - Cleaning Data", "4. Exploratory Data Analysis (EDA)",  "5. Recency Frequency Monetary (RFM)", "6. Visualization & Explanatory Analysis", "7. Conclusion"))     
     
 # Load data
-data_customer = pd.read_csv('customers_dataset.csv')
-data_products = pd.read_csv('products_dataset.csv')
-data_sellers = pd.read_csv('sellers_dataset.csv')
-data_orders = pd.read_csv('orders_dataset.csv')
-data_order_items = pd.read_csv('order_items_dataset.csv')
-data_order_payments = pd.read_csv('order_payments_dataset.csv')
-data_order_reviews = pd.read_csv('order_reviews_dataset.csv')
-data_products_translation = pd.read_csv('product_category_name_translation.csv') 
+data_customer = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/customers_dataset.csv')
+data_products = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/products_dataset.csv')
+data_sellers = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/sellers_dataset.csv')
+data_orders = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/orders_dataset.csv')
+data_order_items = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/order_items_dataset.csv')
+data_order_payments = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/order_payments_dataset.csv')
+data_order_reviews = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/order_reviews_dataset.csv')
+data_products_translation = pd.read_csv('https://github.com/utusks001/e-Commerce_Data_Analysis/blob/main/product_category_name_translation.csv') 
 
 
 def gathering():
