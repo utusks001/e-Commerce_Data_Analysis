@@ -12,6 +12,11 @@ from sklearn.impute import IterativeImputer
 from sklearn.preprocessing import MinMaxScaler
 from itertools import combinations
 import plotly.offline as py
+import plotly.graph_objs as go
+
+plotly.offline.plot({"data": [go.Scatter(x=[1, 2, 3, 4], y=[4, 3, 2, 1])],
+                     "layout": go.Layout(title="hello world")},
+                     image='jpeg', image_filename='test')
 import plotly.express as px
 import plotly.graph_objs as go
 pd.set_option('display.max_columns', 100)
