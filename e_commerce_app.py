@@ -59,51 +59,39 @@ gauth.LocalWebserverAuth()
 
 drive = GoogleDrive(gauth)
 
-file_id = 'https://drive.google.com/drive/u/1/folders/1bTwK5cUZ03glkslfAyIqUpogscyCocUZ'  
-file = drive.CreateFile({'id': file_id})
+data_customer = None
+data_products = None
+data_sellers = None
+data_orders = None
+data_order_items = None
+data_order_payments = None
+data_order_reviews = None
+data_product_category_name_translation = None
 
-with
- 
-open('customer_dataset.csv', 'wb') as a:
-    file.GetContentFile(a)
+for i, file_id in enumerate(file_ids):
+    file = drive.CreateFile({'id': file_id})
+    file_name = f'dataset_{i}.csv'
 
-data_customer = pd.read_csv('customer_dataset.csv')
- 
-open('products_dataset.csv', 'wb') as b:
-    file.GetContentFile(b)
+    # Download and read the file into a DataFrame
+    with open(file_name, 'wb') as f:
+        file.GetContentFile(f)
 
-data_products = pd.read_csv('products_dataset.csv')
- 
-open('sellers_dataset.csv', 'wb') as c:
-    file.GetContentFile(c)
-
-data_customer = pd.read_csv('sellers_dataset.csv')
- 
-open('orders_dataset.csv', 'wb') as d:
-    file.GetContentFile(d)
-
-data_products = pd.read_csv('orders_dataset.csv')
-
- 
-open('order_items_dataset.csv', 'wb') as e:
-    file.GetContentFile(e)
-
-data_customer = pd.read_csv('order_items_dataset.csv')
- 
-open('order_payments_dataset.csv', 'wb') as f:
-    file.GetContentFile(f)
-
-data_products = pd.read_csv('order_payments_dataset.csv')
- 
-open('order_reviews_dataset.csv', 'wb') as g:
-    file.GetContentFile(g)
-
-data_customer = pd.read_csv('order_reviews_dataset.csv')
- 
-open('product_category_name_translation.csv', 'wb') as h:
-    file.GetContentFile(h)
-
-data_products = pd.read_csv('product_category_name_translation.csv')
+    if i == 0:
+        data_customer = pd.read_csv(file_name)
+    elif i == 1:
+        data_products = pd.read_csv(file_name)
+    elif i == 2:
+        data_sellers = pd.read_csv(file_name)
+    elif i == 3:
+        data_orders = pd.read_csv(file_name)
+    elif i == 4:
+        data_order_items = pd.read_csv(file_name)
+    elif i == 5:
+        data_order_payments = pd.read_csv(file_name)
+    elif i == 6:
+        data_order_reviews = pd.read_csv(file_name)
+    elif i == 7:
+        data_product_translation = pd.read_csv(file_name)
 
 
 # Load data
