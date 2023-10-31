@@ -59,6 +59,17 @@ gauth.LocalWebserverAuth()
 
 drive = GoogleDrive(gauth)
 
+file_ids = [
+    'https://drive.google.com/file/d/1kh121FSVRbFRLHrcVsAkuNgBQfDyYmDr/view?usp=sharing', #Customer
+    'https://drive.google.com/file/d/1-Bcfy1lKsTsIQzB84tVDpzuoMAGn3qk6/view?usp=sharing', #Product
+    'https://drive.google.com/file/d/1woanj_KVcQforfXdf7OYA401CfuEcKVE/view?usp=sharing', #Seller
+    'https://drive.google.com/file/d/1oChcaucIBi5BMvyW3MaCWQrq7uUE0dEa/view?usp=sharing', #Order
+    'https://drive.google.com/file/d/1QI9PFZ3U95YqSkxqoUciuzaYpgwJION2/view?usp=sharing', #Order_items
+    'https://drive.google.com/file/d/1bbtH5pQrnV6-y3r0N8nP7lvcAWvR4eZZ/view?usp=sharing', #Order_payments
+    'https://drive.google.com/file/d/1qZMulKW-bUa6Vi-vHID4yjG2lc97gSNd/view?usp=sharing', #Order_reviews
+    'https://drive.google.com/file/d/1adJBJzRAw3pfrdDacjO9Q8-gQ4oeRqz7/view?usp=sharing' #Product_Translation
+]
+
 data_customer = None
 data_products = None
 data_sellers = None
@@ -92,6 +103,7 @@ for i, file_id in enumerate(file_ids):
         data_order_reviews = pd.read_csv(file_name)
     elif i == 7:
         data_product_translation = pd.read_csv(file_name)
+
 
 
 # Load data
