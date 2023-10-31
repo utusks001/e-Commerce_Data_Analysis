@@ -6,3 +6,5 @@ pandas
 scikit-learn
 plotly
 folium
+pydrive
+io
