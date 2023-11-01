@@ -566,9 +566,6 @@ def cleaning():
         st.subheader("3. Cleaning DataFrame Orders")   
         st.write("                                             ")  
 
-        # Data Type Conversion
-        st.write("Data Type Conversion:")
-
         # Display data information
         st.write("**Orders Data information:**")
         # orders.info()
