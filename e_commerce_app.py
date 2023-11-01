@@ -1608,10 +1608,7 @@ def Visualization():
 def Conclusion():
     st.subheader("This Part of Conclusion")
     st.write("                                             ")  
-    st.write("""**Based on the determining business questions at the beginning, the following are the conclusions from** 
-
-    """)
-    st.write("""**the answers of EDA and the Visualization and Explanatory Analysis parts:**
+    st.write("""**Based on the determining business questions at the beginning, the following are the conclusions from the answers of EDA and the Visualization and Explanatory Analysis parts:**
 
     """)
     st.write("**1. Which Top and Bottom Category of Products ?**")
