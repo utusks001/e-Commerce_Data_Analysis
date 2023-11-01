@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
-# from matplotlib.pyplot import *
-# %matplotlib inline
 from matplotlib.gridspec import GridSpec
 import seaborn as sns
 from sklearn.impute import SimpleImputer
@@ -11,7 +9,6 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from sklearn.preprocessing import MinMaxScaler
 from itertools import combinations
-# import plotly.offline 
 import plotly.offline as py
 import plotly.express as px
 import plotly.graph_objs as go
@@ -67,7 +64,7 @@ def gathering():
     st.write("        2. Which Top Positively and Negatively Reviewed Products ?")
     st.write("        3. Which Category of goods that are most and least popular orders ?")
     st.write("        4. How long does the long delivery days ? from where to where ?")  
-    st.write("        5. How do sales Comparison in 2017 and 2018 ?") 
+    st.write("        5. How do sales comparison in 2017 and 2018 ?") 
     st.write("        6. How e-Commerce trend ? What day and time of transaction ?")                                            
     st.write("                                             ")  
     
@@ -710,20 +707,18 @@ def EDA():
 
             return top_pos, top_neg
 
-        # Create a Streamlit app
-        st.subheader("Top Positively and Negatively Reviewed Products")
 
         # Call the function to find top reviewed products
         n = 10  # Change this value to show a different number of products
         top_positively_reviewed, top_negatively_reviewed = find_top_reviewed_products(data_order_reviews, data_orders, data_order_items, df_product, n)
 
         # Display the top positively reviewed products
-        st.write("Top Positively Reviewed Products:")
+        st.subheader("Top Positively Reviewed Products:")
         st.write(top_positively_reviewed)
         st.write("                                             ")    
 
         # Display the top negatively reviewed products
-        st.write("Top Negatively Reviewed Products:")
+        st.subheader("Top Negatively Reviewed Products:")
         st.write(top_negatively_reviewed) 
         st.write("                                             ")   
 
@@ -784,10 +779,6 @@ def EDA():
         # Sort data
         df_category_top = df_category.sort_values(by="orders", ascending=False)
         df_category_bottom = df_category.sort_values(by="orders", ascending=True)
-
-        # Create a Streamlit app
-        st.subheader("Category of Goods that are most purchased and least popular orders")
-        st.write("                                             ") 
 
         # Top categories
         st.subheader('Top 10 Most Popular Orders')
@@ -937,7 +928,7 @@ def EDA():
         orders_compare = orders.query('order_purchase_year in (2017, 2018) & order_purchase_month <= 8')
 
         # Streamlit app
-        st.subheader("E-commerce Orders Analysis for sales comparation in 2017 and 2018")
+        st.subheader("E-commerce Orders Analysis for sales comparison in 2017 and 2018")
 
         # Display Orders Compare data
         st.write(orders_compare.head())
@@ -1200,11 +1191,11 @@ def Visualization():
     st.write("                                             ") 
 
     st.write("**Answering for the following Determining Business Questions of E-Commerce Public Dataset** :")  
-    st.write("        1. Which Top and Bottom  10 Category of Products ?")
+    st.write("        1. Which Top and Bottom 10 Category of Products ?")
     st.write("        2. Which Top Positively and Negatively Reviewed Products ?")
     st.write("        3. Which Category of goods that are most and least popular orders ?")
     st.write("        4. How long does the long delivery days ? from where to where ?")   
-    st.write("        5. How do sales comparation in 2017 and 2018 ?")                 
+    st.write("        5. How do sales comparison in 2017 and 2018 ?")                 
     st.write("        6. How e-Commerce trend ? What day and time of transaction ?")                                             
     st.write("                                                                    ")  
       
@@ -1484,7 +1475,7 @@ def Visualization():
       
 
     with tab65:
-        st.subheader("5. How do sales Comparison in 2017 and 2018 ?")
+        st.subheader("5. How do sales comparison in 2017 and 2018 ?")
         st.write("                                             ")  
 
         # confirm data types 
@@ -1575,7 +1566,7 @@ def Visualization():
         ax2 = fig.add_subplot(gs[1, 0])
         ax3 = fig.add_subplot(gs[1, 1])
 
-        # Lineplot - Evolution of e-commerce orders along time
+        # Lineplot - Evolution Trend of e-commerce orders along time
         sns.lineplot(data=orders['order_purchase_year_month'].value_counts().sort_index(), ax=ax1,
                     color='darkslateblue', linewidth=2)
         ax1.annotate(f'Highest orders received', (13, 7500), xytext=(-75, -25),
@@ -1587,7 +1578,7 @@ def Visualization():
 
         for tick in ax1.get_xticklabels():
             tick.set_rotation(45)
-        ax1.set_title('Evolution of Total Orders in Brazilian E-Commerce', size=14, color='dimgrey')
+        ax1.set_title('Evolution Trend of Total Orders in E-Commerce', size=14, color='dimgrey')
         
         # Barchart - Total of orders by day of the week
         sns.countplot(data=orders, x='order_purchase_dayofweek', ax=ax2, palette='YlGnBu')
@@ -1631,7 +1622,7 @@ def Conclusion():
     st.write("The long delivery days between state is **27.03 days** , from **SP** to **RR**")   
     st.write("The long delivery days between city is **24.25 days** , from **sao jose dos campos** to **belem**")              
     st.write("                                                                    ")  
-    st.write("**5. How do sales Comparison in 2017 and 2018 ?**")
+    st.write("**5. How do sales comparison in 2017 and 2018 ?**")
     st.write("Answer :                                                                     ")   
     st.write("Sales in 2017 is **22968**")   
     st.write("Sales in 2018 is **53991**")   
