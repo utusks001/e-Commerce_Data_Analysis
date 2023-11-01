@@ -63,11 +63,11 @@ def gathering():
     st.write("                                             ")  
 
     st.write("**Determining Business Questions of E-Commerce Public Dataset** :")  
-    st.write("        1. Which Top and Bottom Category of Products ?")
+    st.write("        1. Which Top and Bottom 10 Category of Products ?")
     st.write("        2. Which Top Positively and Negatively Reviewed Products ?")
     st.write("        3. Which Category of goods that are most and least popular orders ?")
     st.write("        4. How long does the long delivery days ? from where to where ?")  
-    st.write("        5. How do sales comparation in 2017 and 2018 ?") 
+    st.write("        5. How do sales Comparison in 2017 and 2018 ?") 
     st.write("        6. How e-Commerce trend ? What day and time of transaction ?")                                            
     st.write("                                             ")  
     
@@ -683,7 +683,7 @@ def EDA():
         st.write("                                             ")     
 
         # Display the frequently bought together products
-        st.subheader('Bottom Product Categories')
+        st.subheader('Bottom 10 Product Categories')
         st.write("                                             ")  
         st.write(bottom_10_category)
         st.write("                                             ")     
@@ -711,19 +711,19 @@ def EDA():
             return top_pos, top_neg
 
         # Create a Streamlit app
-        st.subheader("Top 10 Positively and Negatively Reviewed Products")
+        st.subheader("Top Positively and Negatively Reviewed Products")
 
         # Call the function to find top reviewed products
         n = 10  # Change this value to show a different number of products
         top_positively_reviewed, top_negatively_reviewed = find_top_reviewed_products(data_order_reviews, data_orders, data_order_items, df_product, n)
 
         # Display the top positively reviewed products
-        st.write("Top 10 Positively Reviewed Products:")
+        st.write("Top Positively Reviewed Products:")
         st.write(top_positively_reviewed)
         st.write("                                             ")    
 
         # Display the top negatively reviewed products
-        st.write("Top 10 Negatively Reviewed Products:")
+        st.write("Top Negatively Reviewed Products:")
         st.write(top_negatively_reviewed) 
         st.write("                                             ")   
 
@@ -796,7 +796,7 @@ def EDA():
         st.write("                                             ")  
 
         # Bottom categories
-        st.subheader('Bottom Least Popular Orders')
+        st.subheader('Top 10 Least Popular Orders')
         st.write("                                             ")  
         st.write(df_category_bottom)
         st.write("                                             ")  
@@ -1200,7 +1200,7 @@ def Visualization():
     st.write("                                             ") 
 
     st.write("**Answering for the following Determining Business Questions of E-Commerce Public Dataset** :")  
-    st.write("        1. Which Top and Bottom Category of Products ?")
+    st.write("        1. Which Top and Bottom  10 Category of Products ?")
     st.write("        2. Which Top Positively and Negatively Reviewed Products ?")
     st.write("        3. Which Category of goods that are most and least popular orders ?")
     st.write("        4. How long does the long delivery days ? from where to where ?")   
@@ -1269,7 +1269,7 @@ def Visualization():
     tab61, tab62, tab63, tab64, tab65, tab66 = st.tabs(["1.Product Category ", "2.Product Reviews", "3.Popular Product Orders", "4.Average Time Delivered", "5.Sales Comparation", "6.e-Commerce Trend"])
 
     with tab61:
-        st.subheader("1. Which Top and Bottom Category of Products ?")
+        st.subheader("1. Which Top and Bottom 10 Category of Products ?")
         st.write("                                             ")  
 
         # Get the top 10 product categories
@@ -1325,7 +1325,7 @@ def Visualization():
         plt.xticks(rotation=75)
 
         # Set the chart title
-        plt.title('Bottom Product Categories')
+        plt.title('Bottom 10 Product Categories')
 
         # Display the chart in Streamlit
         st.pyplot(fig_bottom)
@@ -1396,13 +1396,13 @@ def Visualization():
 
         fig_top = plt.figure(figsize=(10, 5))
         sns.barplot(x='orders', y='category', data=df_category_top, ax=plt.gca())
-        plt.title("Category of Goods that are most popular orders", fontsize=16)
+        plt.title("Category the most popular orders", fontsize=16)
         st.pyplot(fig_top)       
 
 
         fig_bottom = plt.figure(figsize=(10, 5))
         sns.barplot(x='orders', y='category', data=df_category_bottom, ax=plt.gca())
-        plt.title("Category of Goods that are least popular orders", fontsize=16)
+        plt.title("Category the least popular orders", fontsize=16)
         st.pyplot(fig_bottom)       
         st.write("                                             ") 
 
@@ -1484,7 +1484,7 @@ def Visualization():
       
 
     with tab65:
-        st.subheader("5. How do sales comparation in 2017 and 2018 ?")
+        st.subheader("5. How do sales Comparison in 2017 and 2018 ?")
         st.write("                                             ")  
 
         # confirm data types 
@@ -1611,7 +1611,7 @@ def Conclusion():
     st.write("""**Based on the determining business questions at the beginning, the following are the conclusions from the answers of EDA and the Visualization and Explanatory Analysis parts:**
 
     """)
-    st.write("**1. Which Top and Bottom Category of Products ?**")
+    st.write("**1. Which Top and Bottom 10 Category of Products ?**")
     st.write("Answer :                                                                     ")  
     st.write("Top Category of Products is **bed_bath_table**")   
     st.write("Bottom Category of Products is **cds_dvds_musicals**")       
@@ -1631,7 +1631,7 @@ def Conclusion():
     st.write("The long delivery days between state is **27.03 days** , from **SP** to **RR**")   
     st.write("The long delivery days between city is **24.25 days** , from **sao jose dos campos** to **belem**")              
     st.write("                                                                    ")  
-    st.write("**5. How do sales comparation in 2017 and 2018 ?**")
+    st.write("**5. How do sales Comparison in 2017 and 2018 ?**")
     st.write("Answer :                                                                     ")   
     st.write("Sales in 2017 is **22968**")   
     st.write("Sales in 2018 is **53991**")   
