@@ -1637,7 +1637,7 @@ def Conclusion():
     st.write("**5. How do sales comparation in 2017 and 2018 ?**")
     st.write("Answer :                                                                     ")   
     st.write("Sales in 2017 is **22968**")   
-    st.write("Sales in 2017 is **53991**")   
+    st.write("Sales in 2018 is **53991**")   
     st.write("Sales increase is **143 %**")                            
     st.write("                                                                    ")  
     st.write("**6. How e-Commerce trend ? What day and time of transaction ?**")
