@@ -27,10 +27,8 @@ import streamlit as st
 import pickle
 import time
 from PIL import Image
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
 import requests
-#from io import StringIO
+
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -54,55 +52,15 @@ st.write("""
 
 add_selectitem = st.sidebar.selectbox("e-Commerce Data Analysis Steps ", ("1. Data Wrangling - Gathering Data", "2. Data Wrangling - Assesing Data", "3. Data Wrangling - Cleaning Data", "4. Exploratory Data Analysis (EDA)",  "5. Recency Frequency Monetary (RFM)", "6. Visualization & Explanatory Analysis", "7. Conclusion"))     
 
-
-urlCustomer = 'https://drive.google.com/file/d/1kh121FSVRbFRLHrcVsAkuNgBQfDyYmDr/view?usp=sharing' #Customer
-urlProduct = 'https://drive.google.com/file/d/1-Bcfy1lKsTsIQzB84tVDpzuoMAGn3qk6/view?usp=sharing' #Product
-urlSeller = 'https://drive.google.com/file/d/1woanj_KVcQforfXdf7OYA401CfuEcKVE/view?usp=sharing' #Seller
-urlOrder = 'https://drive.google.com/file/d/1oChcaucIBi5BMvyW3MaCWQrq7uUE0dEa/view?usp=sharing' #Order
-urlOrder_items = 'https://drive.google.com/file/d/1QI9PFZ3U95YqSkxqoUciuzaYpgwJION2/view?usp=sharing' #Order_items
-urlOrder_payments = 'https://drive.google.com/file/d/1bbtH5pQrnV6-y3r0N8nP7lvcAWvR4eZZ/view?usp=sharing' #Order_payments
-urlOrder_reviews = 'https://drive.google.com/file/d/1qZMulKW-bUa6Vi-vHID4yjG2lc97gSNd/view?usp=sharing' #Order_reviews
-urlProduct_Translation = 'https://drive.google.com/file/d/1adJBJzRAw3pfrdDacjO9Q8-gQ4oeRqz7/view?usp=sharing' #Product_Translation
-
-
-file_idcustomer = urlCustomer.split('/')[-2]
-dwn_urlcustomer = 'https://drive.google.com/uc?id=' + file_idcustomer
-file_idproducts = urlProduct.split('/')[-2]
-dwn_urlproducts = 'https://drive.google.com/uc?id=' + file_idproducts
-file_idsellers = urlSeller.split('/')[-2]
-dwn_urlsellers = 'https://drive.google.com/uc?id=' + file_idsellers
-file_idorders = urlOrder.split('/')[-2]
-dwn_urlorders = 'https://drive.google.com/uc?id=' + file_idorders
-file_idorder_items = urlOrder_items.split('/')[-2]
-dwn_urlorder_items = 'https://drive.google.com/uc?id=' + file_idorder_items
-file_idorder_payments = urlOrder_payments.split('/')[-2]
-dwn_urlorder_payments = 'https://drive.google.com/uc?id=' + file_idorder_payments
-file_idorder_reviews = urlOrder_reviews.split('/')[-2]
-dwn_urlorder_reviews = 'https://drive.google.com/uc?id=' + file_idorder_reviews
-file_idproduct_translation = urlProduct_Translation.split('/')[-2]
-dwn_urlproduct_translation = 'https://drive.google.com/uc?id=' + file_idproduct_translation
-
-data_customer = pd.read_csv(dwn_urlcustomer)
-data_products = pd.read_csv(dwn_urlproducts)
-data_sellers = pd.read_csv(dwn_urlsellers)
-data_orders = pd.read_csv(dwn_urlorders)
-data_order_items = pd.read_csv(dwn_urlorder_items)
-data_order_payments = pd.read_csv(dwn_urlorder_payments)
-data_order_reviews = pd.read_csv(dwn_urlorder_reviews)
-data_product_translation = pd.read_csv(dwn_urlproduct_translation)
-
-
-
 # Load data
-# data_customer = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/customers_dataset.csv')
-# data_products = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/products_dataset.csv')
-# data_sellers = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/sellers_dataset.csv')
-# data_orders = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/orders_dataset.csv')
-# data_order_items = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/order_items_dataset.csv')
-# data_order_payments = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/order_payments_dataset.csv')
-# data_order_reviews = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/order_reviews_dataset.csv')
-# data_products_translation = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/product_category_name_translation.csv') 
-
+data_customer = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/customers_dataset.csv')
+data_products = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/products_dataset.csv')
+data_sellers = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/sellers_dataset.csv')
+data_orders = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/orders_dataset.csv')
+data_order_items = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/order_items_dataset.csv')
+data_order_payments = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/order_payments_dataset.csv')
+data_order_reviews = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/order_reviews_dataset.csv')
+data_products_translation = pd.read_csv('https://raw.githubusercontent.com/utusks001/e_Commerce_Data_Analysis/main/product_category_name_translation.csv') 
 
 def gathering():
     st.subheader("This Part of Data Wrangling - Gathering Data")
