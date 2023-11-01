@@ -335,7 +335,7 @@ def assesing():
         st.write("                                             ")  
 
         # Display data information
-        st.write("**df_order_items Data information:**")
+        st.write("**df_product Data information:**")
         # df_order_items.info()
         for index, (col, dtype) in enumerate(zip(df_product.columns, df_product.dtypes)):
             non_null_count = df_product[col].count()
@@ -344,7 +344,7 @@ def assesing():
         st.write("                                             ")  
 
         # Display the shape of the DataFrame
-        st.write(f"**Shape of DataFrame:** {df_product.shape}")
+        st.write(f"**Shape of df_product:** {df_product.shape}")
         st.write("                                             ")  
 
         # Find rows where 'product_category_name_english' is null
