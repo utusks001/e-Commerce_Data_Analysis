@@ -194,7 +194,7 @@ def gathering():
             st.subheader("7. Order Reviews Data")
             st.write("                                             ")  
     
-            st.write("**First 5 rows of the order data:**")
+            st.write("**First 5 rows of the order reviews data:**")
             st.dataframe(data_order_reviews.head())
             st.write("                                             ")  
 
