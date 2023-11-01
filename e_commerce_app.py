@@ -54,10 +54,6 @@ st.write("""
 
 add_selectitem = st.sidebar.selectbox("e-Commerce Data Analysis Steps ", ("1. Data Wrangling - Gathering Data", "2. Data Wrangling - Assesing Data", "3. Data Wrangling - Cleaning Data", "4. Exploratory Data Analysis (EDA)",  "5. Recency Frequency Monetary (RFM)", "6. Visualization & Explanatory Analysis", "7. Conclusion"))     
 
-gauth = GoogleAuth()
-gauth.LocalWebserverAuth()
-
-drive = GoogleDrive(gauth)
 
 urlCustomer = 'https://drive.google.com/file/d/1kh121FSVRbFRLHrcVsAkuNgBQfDyYmDr/view?usp=sharing' #Customer
 urlProduct = 'https://drive.google.com/file/d/1-Bcfy1lKsTsIQzB84tVDpzuoMAGn3qk6/view?usp=sharing' #Product
