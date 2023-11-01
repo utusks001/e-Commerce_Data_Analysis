@@ -1631,8 +1631,7 @@ def Conclusion():
     st.write("The highest transaction is **Monday** and the lowest is **Saturday**")   
     st.write("The highest transactions are during the **Afternoon** and the lowest at **Dawn**")            
     st.write("                                                                    ")
-    st.write("""Conclusion :The e-Commerce trend as a whole until November 2017 **tended to increase**, for the period December 2017 to August 2018 the trend tended to **fluctuate**,""")   
-    st.write("""but entering September 2017 there was a **decrease**.""")  
+    st.write("""Conclusion :The e-Commerce trend as a whole until November 2017 **tended to increase**, for the period December 2017 to August 2018 the trend tended to **fluctuate**, but entering September 2017 there was a **decrease**.""")  
 
 
 if add_selectitem == "1. Data Wrangling - Gathering Data":
