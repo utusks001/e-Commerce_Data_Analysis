@@ -5,7 +5,7 @@ Link Streamlit Dashboard --> https://e-commerce-data-analysis.streamlit.app/
 ```
 conda create --name main-ds python=3.7
 conda activate main-ds
-pip install numpy pandas scipy matplotlib seaborn jupyter streamlit babel
+pip install numpy pandas matplotlib seaborn scikit-learn plotly streamlit 
 ```
 
 ## Run steamlit app
